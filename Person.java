@@ -19,6 +19,11 @@ public class Person extends Actor
         moveAround();
         hitEnemy();
         hitFood();
+        hitBomb();
+    }
+    public void hitBomb()
+    {
+    
     }
     public boolean hitHome(){
        if(isTouching(Home.class)){
@@ -77,17 +82,25 @@ public class Person extends Actor
         }
         if(Greenfoot.isKeyDown("down")){
             setLocation(getX(), getY()+1);
-            
+            if(isTouching(Wall.class))
+         {
+           setLocation(getX(), getY()-2);   
+         }
             
         }
         if(Greenfoot.isKeyDown("right")){
             setLocation(getX()+1, getY());
-            
-            
+           if(isTouching(Wall.class))
+         {
+           setLocation(getX()-2, getY());   
+         }
         }
         if(Greenfoot.isKeyDown("left")){
             setLocation(getX()-1, getY());
-            
+            if(isTouching(Wall.class))
+         {
+           setLocation(getX()+2, getY());   
+         }
         }
     }
 }

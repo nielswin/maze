@@ -42,15 +42,15 @@ public class MyWorld extends World
         int x = 25;        
         int[][] maze = 
             {
-                {1, 1, 1, 1, 0, 2, 1, 0, 0, 0, 1, 0},
+                {1, 1, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0},
                 {Greenfoot.getRandomNumber(2)+2, 0, 0, 1, 0, 1, 1, 0, 1, Greenfoot.getRandomNumber(2)+2, 1, 0},
                 {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0},
                 {Greenfoot.getRandomNumber(2)+2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-                {1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1},
+                {1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1},
                 {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0},
-                {0, 1, 0, 1, 0, 0, 1, 0, 1, 2, 1, 0},
+                {0, 1, 1, 1, 0, 0, 1, 1, 1, 2, 1, 0},
                 {0, 1, 1, 1, 0, 1, 1, 0, Greenfoot.getRandomNumber(2)+2, 0, 1, 1},
-                {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, Greenfoot.getRandomNumber(2)+2},
+                {0, 1, 0, 2, 0, 0, 0, 0, 1, 1, 1, Greenfoot.getRandomNumber(2)+2},
                 {Greenfoot.getRandomNumber(2)+2, 1, 0, 1, 0, 1, 1, 0, 0, 1, Greenfoot.getRandomNumber(2)+2, 0},
                 {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0},
                 {0, 0, 0, Greenfoot.getRandomNumber(2)+2, 0, Greenfoot.getRandomNumber(2)+2, 1, 0, 0, 0, 0, 0},
@@ -74,7 +74,8 @@ public class MyWorld extends World
         }
 
         addObject(new Person(),25,575);
-
+        addObject(new bomb(),222, 520);
+        addObject(new bomb(),230, 30);
     }
   
 }
