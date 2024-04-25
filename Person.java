@@ -21,9 +21,14 @@ public class Person extends Actor
         hitFood();
         hitBomb();
     }
-    public void hitBomb()
-    {
-    
+      public void hitBomb() {
+        if (isTouching(bomb.class)) {
+            // Show game over text
+            getWorld().showText("Game Over", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            
+            // Stop the game
+            Greenfoot.stop();
+        }
     }
     public boolean hitHome(){
        if(isTouching(Home.class)){

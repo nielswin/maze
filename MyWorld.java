@@ -20,6 +20,7 @@ public class MyWorld extends World
         super(600, 600, 1);
         this.score=0;
         prepare();
+        
     }
     
     public void act(){
@@ -29,7 +30,23 @@ public class MyWorld extends World
             addObject(new Home(),575,25);
         }
         
-   
+        updateTimer();
+        checkGameOver();
+    }
+     private void updateTimer() {
+        if (timer > 0) {
+            timer--;
+            counter.setValue("Time: " + timer);
+        }
+    }
+     private void checkGameOver() {
+        if (timer <= 0) {
+            // Show game over screen
+            getWorld().showText("Game Over", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            
+            // Stop the game
+            Greenfoot.stop();
+        }
     }
     /**
      * Prepare the world for the start of the program.
@@ -76,6 +93,7 @@ public class MyWorld extends World
         addObject(new Person(),25,575);
         addObject(new bomb(),222, 520);
         addObject(new bomb(),230, 30);
+        addObject(counter, 60, 20);
     }
   
 }
